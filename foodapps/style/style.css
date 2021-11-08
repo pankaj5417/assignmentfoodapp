@@ -1,0 +1,24 @@
+
+
+#login{
+    display: flex;
+    width: 30%;
+    border: 1px solid black;
+}
+#login>h3{
+    margin: 5px;
+}
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+  #container{
+      width: 90%;
+      margin: 2% auto;
+      display: grid;
+      grid-template-columns: repeat(3,30%);
+      gap: 10px;
+  }

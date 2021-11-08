@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 50%;
+            margin: auto;
+        }
+        #cont{
+            width: 60%;
+            margin: auto;
+
+        }
+        #cart-btn{
+            width: 80%;
+            background-color: yellow;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <h3>Cart Items</h3>
+    <div id="cont"></div>
+    <button onclick="alert()" id="cart-btn">Proceed To Checkout</button>
+    </div>
+</body>
+</html>
+<script>
+    var cont=document.getElementById("cont")
+
+    let Cart=JSON.parse( localStorage.getItem("foodCart"))
+function showitems(){
+    cont.innerHTML=null
+    Cart.forEach((prod)=>{
+        let div=document.createElement("div")
+        let img=document.createElement("img")
+        let addtoCartbtn=document.createElement("button")
+       
+        let checkout=document.createElement("button")
+        checkout.innerText="Proceed To Checkout"
+        checkout.style.backgroundColor="yellow"
+
+        img.src=prod.strMealThumb
+
+        let p1=document.createElement("p")
+        p1.innerText=prod.strMeal
+        div.append(img,p1)
+        div.style.width="60%"
+        cont.append(div)
+        img.style.width="60%"
+    })
+}
+showitems()
+function alet(){{
+    alet("Your order is Accepted.")
+}}
+</script>
